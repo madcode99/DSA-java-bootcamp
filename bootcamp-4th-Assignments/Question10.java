@@ -2,25 +2,19 @@ import java.util.Scanner;
 
 public class Question10 {
     public static void main(String[] args) {
-        // Write a function to find if a number is a palindrome or not. Take number as parameter.
-        Scanner input=new Scanner(System.in);
-        System.out.print("Enter a number : ");
-        int n = input.nextInt();
-        numP(n);
+        // Pythagorean Triplet in an array
+        Scanner input =new Scanner(System.in);
+        int[] arr = new int[3];
+        arr[0]=input.nextInt();
+        arr[1]= input.nextInt();
+        arr[2]= input.nextInt();
+        System.out.println(IsPythgoreanTriplet(arr));
     }
-    public static void numP(int n){
-        int num =n;
-        int rev=0;
-        while( n>0 ){
-            int rem =n%10;
-            n/=10;
-            rev=rev*10+rem;
-        }
-        System.out.println(rev);
-        if(rev == num){
-            System.out.println("palindrome");
+    public static boolean IsPythgoreanTriplet(int ...num){
+        if(num[0] * num[0] + num[1] * num[1] == num[2] * num[2]){
+            return true;
         }else {
-            System.out.println("not palindrome ");
+            return false;
         }
     }
 }
